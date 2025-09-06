@@ -11,7 +11,7 @@ int main(int argc, char ** argv) {
 	bool allCyclesFlag = false;
 	int nSplits = -1;
 	int iteration = -1;
-    int upperBound=(int)1e9;
+    unsigned long long upperBound=  18446744073709551615ull;
 	int opt;
 	while (1) {
     	int option_index = 0;
@@ -42,9 +42,11 @@ int main(int argc, char ** argv) {
             case 'i':
             	iteration = (int) strtol(optarg, (char **)NULL, 10);
             	break;
+		/*
             case 'u':
                 upperBound = (int) strtol(optarg, (char **)NULL, 10);
             	break;
+		*/
 			case '?':
         		fprintf(stderr,"Error: Unknown option: %c\n", optopt);
         		abort();

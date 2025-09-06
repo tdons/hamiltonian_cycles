@@ -56,18 +56,18 @@ bool canBeHamiltonian(bitset adjacencyList[], bitset remainingVertices, int last
     return false;
 }
 
-bool canBeHamiltonianPrintCycle(bitset adjacencyList[], bitset remainingVertices, int pathList[], int lastElemOfPath, int firstElemOfPath, int numberOfVertices, int pathLength, int* numberOfHamiltonianCycles, bool allCyclesFlag, int upperBound) {
+bool canBeHamiltonianPrintCycle(bitset adjacencyList[], bitset remainingVertices, int pathList[], int lastElemOfPath, int firstElemOfPath, int numberOfVertices, int pathLength, unsigned long long* numberOfHamiltonianCycles, bool allCyclesFlag, unsigned long long upperBound) {
     if((*numberOfHamiltonianCycles) >= upperBound)
     {
         return true;
     }
     // Check whether we have a Hamiltonian path already and whether this path is a cycle.
     if((pathLength == numberOfVertices) && contains(adjacencyList[firstElemOfPath], lastElemOfPath)) {
-        /*fprintf(stderr,"Hamiltonian cycle: ");
+        /*fprintf(stderr,"Hamiltonian cycle: ");*/
         for(int i = 1; i < numberOfVertices; i++) {
-            fprintf(stderr, "%d -> ", pathList[i]);
+            fprintf(stdout, "%d ", pathList[i]);
         }
-        fprintf(stderr,"%d\n",pathList[0]);*/
+        fprintf(stdout,"%d\n",pathList[0]);
         (*numberOfHamiltonianCycles)++;
         return true;
     }
@@ -117,7 +117,7 @@ bool canBeHamiltonianPrintCycle(bitset adjacencyList[], bitset remainingVertices
     return false;
 }
 
-bool canBeHamiltonianPrintCycleWithEdgeCounts(bitset adjacencyList[], bitset remainingVertices, int pathList[], int lastElemOfPath, int firstElemOfPath, int numberOfVertices, int pathLength, int* numberOfHamiltonianCycles, bool allCyclesFlag, int upperBound, int* edgeCounts) {
+bool canBeHamiltonianPrintCycleWithEdgeCounts(bitset adjacencyList[], bitset remainingVertices, int pathList[], int lastElemOfPath, int firstElemOfPath, int numberOfVertices, int pathLength, unsigned long long* numberOfHamiltonianCycles, bool allCyclesFlag, unsigned long long upperBound, int* edgeCounts) {
     if((*numberOfHamiltonianCycles) >= upperBound)
     {
         return true;
@@ -179,10 +179,10 @@ bool canBeHamiltonianPrintCycleWithEdgeCounts(bitset adjacencyList[], bitset rem
     return false;
 }
 
-bool isHamiltonian(bitset adjacencyList[], int numberOfVertices, bool allCyclesFlag, int upperBound) {
+bool isHamiltonian(bitset adjacencyList[], int numberOfVertices, bool allCyclesFlag, unsigned long long upperBound) {
     bool foundHamiltonianCycle = false;
     bool upperBoundReached=false;
-    int numberOfHamiltonianCycles = 0;
+    unsigned long long numberOfHamiltonianCycles = 0;
     int leastNeighbours = size(adjacencyList[0]);
     int start = 0;
     int a;
@@ -236,15 +236,15 @@ bool isHamiltonian(bitset adjacencyList[], int numberOfVertices, bool allCyclesF
        {
             printf(">=");
        }
-       printf("%d\n", numberOfHamiltonianCycles);
+       printf("%llu\n", numberOfHamiltonianCycles);
     }
     return foundHamiltonianCycle;
 } 
 
-bool isHamiltonianWithEdgeCounts(bitset adjacencyList[], int numberOfVertices, bool allCyclesFlag, int upperBound, int* edgeCounts) {
+bool isHamiltonianWithEdgeCounts(bitset adjacencyList[], int numberOfVertices, bool allCyclesFlag, unsigned long long upperBound, int* edgeCounts) {
     bool foundHamiltonianCycle = false;
     bool upperBoundReached=false;
-    int numberOfHamiltonianCycles = 0;
+    unsigned long long numberOfHamiltonianCycles = 0;
     int leastNeighbours = size(adjacencyList[0]);
     int start = 0;
     int a;
