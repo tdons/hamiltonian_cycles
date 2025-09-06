@@ -1,7 +1,7 @@
 #ifndef BITSETCHOOSER
 #define BITSETCHOOSER
 
-#define USE_64_BIT
+#define USE_128_BIT
 
 #ifdef USE_64_BIT
 	#include "bitset64Vertices.h"

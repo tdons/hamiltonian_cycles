@@ -40,8 +40,8 @@ lastElemOfPath, int firstElemOfPath, int numberOfVertices, int pathLength);
 
 bool canBeHamiltonianPrintCycle(bitset adjacencyList[], bitset
 remainingVertices, int pathList[], int lastElemOfPath, int firstElemOfPath,
-int numberOfVertices, int pathLength, int* numberOfHamiltonianCycles, bool
-allCyclesFlag, int upperBound);
+int numberOfVertices, int pathLength, unsigned long long* numberOfHamiltonianCycles, bool
+allCyclesFlag, unsigned long long upperBound);
 
 /**
  *  Returns a boolean indicating whether the given graph is Hamiltonian or
@@ -58,10 +58,10 @@ allCyclesFlag, int upperBound);
  *  @return Returns true when the graph is Hamiltonian and false otherwise.
  * */
 bool isHamiltonian(bitset adjacencyList[], int numberOfVertices, bool
-allCyclesFlag, int upperBound);
+allCyclesFlag, unsigned long long upperBound);
 
 bool isHamiltonianWithEdgeCounts(bitset adjacencyList[], int numberOfVertices, bool
-allCyclesFlag, int upperBound, int* edgeCounts);
+allCyclesFlag, unsigned long long upperBound, int* edgeCounts);
 
 bool exclusionIsHamiltonian(bitset adjacencyList[], int totalNumberOfVertices,
 int newNumberOfVertices, bitset excludedVertices, bool printPathFlag);
